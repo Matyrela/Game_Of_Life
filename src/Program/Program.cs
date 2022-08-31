@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Text;
+using System.Threading;
 
 namespace PII_Game_Of_Life
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(String[] args)
         {
-            Console.WriteLine("Hello World!");
+            bool[,] b = LeerArchivo.archivo("C:\\Users\\matia\\Desktop\\Game_Of_Life\\assets\\board.txt");
+            int width = b.GetLength(0);
+            int height = b.GetLength(1);
+
+            while (true)
+            {
+                Console.Clear();
+                b = PrintBoard.print(b, width, height);
+            }
         }
     }
 }
